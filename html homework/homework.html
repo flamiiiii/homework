@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .top{
+        width: 90%;
+        height: 10%;
+        position: fixed;
+        background-color: beige;
+        border-radius: 10px;
+        left: 5%;
+        margin-top: 0%;
+        box-shadow: 10px 10px 5px rgb(114, 108, 108);
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        display: flex;
+        text-align: center;
+        color: chartreuse;
+        z-index: 99;
+    }
+    .main{
+        width:68%;
+        margin-top: 5%;
+        border:rgb(136, 106, 37),4px, solid ;
+        background-color: rgb(255, 255, 255) ;
+        margin-left: 10%;
+        border-radius: 10px;
+        padding: 6%;
+        box-shadow: 20px 20px 5px rgb(114, 108, 108);
+    }
+    #left{
+        float: left;
+        position: fixed;
+        top:20%;
+    }
+    .test_box2{
+        width: 120px;
+        height: 400px;
+        border-radius: 30px;
+        border-color: chartreuse;
+        background-color: rgb(210, 237, 239);
+        margin: 0 auto;
+        text-align: center;
+        line-height: 200px;
+        font-size: 50px;
+    }
+   .hr1{
+        border: 2px solid;
+        border-radius: 50%;
+    }
+    .hr2{
+        border: 1.5px solid;
+        border-radius: 50%;
+        color: gray;
+    }
+    #right{
+        float: right;
+        position: fixed;
+        top: 85%;
+        right: 10px;
+    }
+    .test_box1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: aquamarine;
+        text-align: center;
+        font-size: 20px;
+    }
+    .center{
+        top: 50%;
+        left: 50%;
+    }
+    #right:hover{
+        background-color: aqua;
+    }
+    .show_button{
+        height: 50px;
+        width: 120px;
+        background-color: #fff;
+        color: black;
+        border-radius: 15%;
+    }
+    #show_button_id{
+        left:100px;
+        position: fixed;
+        top:25px;
+    }
+    .right_animation{
+        width: 200px;
+        height: 200px;
+        border-radius: 30px;
+        border-color: chartreuse;
+        background-color: gold;
+        margin: 0 auto;
+        animation: move 6s linear infinite;
+        text-align: center;
+        line-height: 200px;
+        font-size: 100px;
+    }
+    #right_animation_id{
+        float: right;
+        position: fixed;
+        top:40%;
+        right:0px
+    }
+    @keyframes move{
+        0%{
+            transform: rotate(0deg);
+        }
+        33.3%{
+            transform: rotate(120deg);
+        }
+        66.6%{
+            transform: rotate(240deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    body{
+        background-image: url('3312054.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment:fixed;
+    }
+    .image_class{
+        left: 35%;
+        position: relative;
+    }
+
+</style>
+<body>
+    <script>
+        // 获取按钮
+        var topButton = document.getElementById("right");
+        
+        // 当用户向下滚动 20px 时，显示按钮
+        window.onscroll = function() {
+            scrollFunction();
+        };
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+        
+        // 点击按钮，回到顶部
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        </script>
+    <div class="top">
+            <a href="show.php" >
+                <button class="show_button" id="show_button_id"> 查看访问人员</button>
+            </a>
+            <P>一份厉害的简历</P>
+    </div>
+    <br>
+    <div class="main">
+        <img src="huaji.webp"  width="300px" class="image_class">
+        <br>
+        <br>
+        <br>
+        <hr class="hr1">
+
+        <p>
+            Name:Hua Xiaoji <br>
+            <br>
+            Age:20 <br>
+            <br>
+            Birthday:2.16 <br>
+            <br>
+            Hobby:Internet <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+            不知道写什么了 <br>
+            <br>
+        </p>
+        <br>
+        <br>
+        <br>
+        <hr class="hr2">
+        <p>
+            指南：左上角可以看历史访问人，右下角的按钮回到dingbu
+        </p>
+    </div>
+    <div class="test_box2" id="left">
+        🐂
+    </div>
+    <div class="right_animation" id="right_animation_id">
+        🐂
+    </div>
+    <button onclick="topFunction() " class="test_box1" id="right">top</button>
+</body>
+</html>
